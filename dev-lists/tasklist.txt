@@ -1,0 +1,21 @@
+Option to go to the shops every set number of days.
+This should also have the posibility of getting caught in a riot, fight over toilet roll, mugged, or catching an illness (can't leave the house for 2 weeks)
+If you catch an illness deduct a set amount from health each day - likelyhood of catching illness increases across course of game - use 'days' as a multiplier?.
+Have the lockdown strengthened so that all shops are closed for two weeks.
+
+Proper name and game function for 'distance' - this is the stat that completes the Game - it could be (distance/10)% Complete?
+Do we need the days (it is cool that it keeps ticking up).
+
+Fix all currently existing text to make it relevant to the new game.
+Use arrays to make 'You have found a copy of %s' reusable
+Use arrays for 'Assailants'
+lists of albums, books and films - are we going highbrow, kitch, nerdy or what? This will define the player character
+
+Write an introduction. Explaining the game scenario.
+Internet is down across the country and tv has stopped broadcasting punging society back to the state it was in during the 90s.
+A time when people owned things and had to pay for cultural artifacts instead of paying a monthly fee to an unprofitable wings of hugely profitable technology companies for access to a library larger than anyone could have any use for.
+
+Update images
+
+update file names to relevant names i.e. Caravan = house - non-essential
+update names of ids, variables, objects etc... - non-essential

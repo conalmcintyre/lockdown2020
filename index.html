@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Surviving the Lockdown</title>
+    <link rel="stylesheet" href="css/hacker.css"/>
+  </head>
+  <body>
+    <div id="home"></div>
+    <div id="journey">
+      <div id="stats-area">
+        <div class="stat">Day <span id="stat-day" class="stat-value"></span></div>
+        <div class="stat">Complete <span id="stat-distance" class="stat-value"></span></div>
+        <!-- Boredom -->
+        <div class="stat">Health <span id="stat-crew" class="stat-value"></span></div>
+        <!-- // Health -->
+        <br/>
+        <div class="stat">Media <span id="stat-oxen" class="stat-value"></span></div>
+        <!-- // Media (Things to occupy the protagaonist) -->
+        <div class="stat">Food <span id="stat-food" class="stat-value"></span></div>
+        <div class="stat">Money <span id="stat-money" class="stat-value"></span></div>
+        <div class="stat">Defense <span id="stat-firepower" class="stat-value"></span></div>
+        <!-- // Makeshift Weapons -->
+        <div class="stat">Morale/Mood <span id="stat-weight" class="stat-value"></span><span id="stat-capacity" class="stat-value"></span></div>
+        <!-- // Morale -->
+      </div>
+
+<!-- SHOULD UPDATES AREA BE MOVED BELOW STATS AND IMAGES????? -->
+      <div class="updates-area" id="updates-area"></div>
+      <div id="shop" class="hidden">
+        <div id="prods">
+        </div>
+        <button>Return Home</button>
+      </div>
+      <div id="attack" class="hidden">
+        <div id="attack-description"></div>
+        <button id="fight">Fight</button>
+        <button id="runaway">Run away</button>
+      </div>
+      <div id="progress-area">
+        <img id="caravan" src="images/caravan.png" />
+        <img id="trees" src="images/trees.png" />
+      </div>
+    </div>
+
+<!-- SHOULD EVENT BE MOVED BELOW STATS AND IMAGES????? -->
+<!-- EVENTS ALTER THE LAYOUT AS THEY APPERAR AND DISAPPEAR -->
+    <div id="event"></div>
+    <script src="js/Event.js"></script>
+    <script src="js/Caravan.js"></script>
+    <script src="js/UI.js"></script>
+    <script src="js/Game.js"></script>
+  </body>
+</html>

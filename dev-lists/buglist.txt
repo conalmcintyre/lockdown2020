@@ -1,0 +1,6 @@
+Shops do not work correctly
+- lists multiples of the same item - ensure the the random number selected cannot be the same - should it just display all items?
+- when an item is purchased it does not get added to the current stock - at least not it the UI.
+- shop is using "OregonH.UI.caravan[product.item] += +product.qty;" - product.item does not match the relevant field - add new stat to the array for each item
+
+Attacks do not work correctly
