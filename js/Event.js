@@ -64,9 +64,9 @@ OregonH.Event.eventTypes = [
     notification: 'neutral',
     text: 'You Brave a jouney to the shops',
     products: [
-      {item: 'food', qty: 20, price: 50, stat: 'food'},
-      {item: 'dvd', qty: 1, price: 200, stat: 'oxen'},
-      {item: 'shovel', qty: 2, price: 50, stat: 'firepower'},
+      {item: 'food', qty: 20, price: 10, stat: 'food'},
+      {item: 'dvd', qty: 1, price: 20, stat: 'oxen'},
+      {item: 'shovel', qty: 2, price: 10, stat: 'firepower'},
       {item: 'medical supplies', qty: 5, price: 80, stat: 'crew'}
     ]
   },
@@ -75,10 +75,10 @@ OregonH.Event.eventTypes = [
     notification: 'neutral',
     text: 'You have been visited by a travelling salesman',
     products: [
-      {item: 'food', qty: 30, price: 50, stat: 'food'},
-      {item: 'books', qty: 1, price: 200, stat: 'oxen'},
-      {item: 'ice pick', qty: 2, price: 20, stat: 'firepower'},
-      {item: 'bandages', qty: 10, price: 80, stat: 'crew'}
+      {item: 'food', qty: 30, price: 10, stat: 'food'},
+      {item: 'books', qty: 1, price: 20, stat: 'oxen'},
+      {item: 'ice pick', qty: 2, price: 10, stat: 'firepower'},
+      {item: 'bandages', qty: 10, price: 10, stat: 'crew'}
     ]
   },
   {
@@ -86,10 +86,10 @@ OregonH.Event.eventTypes = [
     notification: 'neutral',
     text: 'Smugglers sell various goods',
     products: [
-      {item: 'food', qty: 20, price: 60, stat: 'food'},
-      {item: 'records', qty: 1, price: 300, stat: 'oxen'},
-      {item: 'sawed off shotgun with pistol grip', qty: 2, price: 80, stat: 'firepower'},
-      {item: 'morphine', qty: 5, price: 60, stat: 'crew'}
+      {item: 'food', qty: 20, price: 10, stat: 'food'},
+      {item: 'records', qty: 1, price: 10, stat: 'oxen'},
+      {item: 'sawed off shotgun with pistol grip', qty: 2, price: 10, stat: 'firepower'},
+      {item: 'morphine', qty: 5, price: 10, stat: 'crew'}
     ]
   },
   {
@@ -111,12 +111,12 @@ OregonH.Event.eventTypes = [
 
 OregonH.Event.generateEvent = function(){
   //pick random one
-  var eventIndex = Math.floor(Math.random() * this.eventTypes.length);
+    var eventIndex = Math.floor(Math.random() * this.eventTypes.length);
   var eventData = this.eventTypes[eventIndex];
 
   //events that consist in updating a stat
   if(eventData.type == 'STAT-CHANGE') {
-    this.stateChangeEvent(eventData);
+      this.stateChangeEvent(eventData);
   }
 
   //shops
@@ -154,8 +154,8 @@ OregonH.Event.stateChangeEvent = function(eventData) {
 
 OregonH.Event.shopEvent = function(eventData) {
   //number of products for sale
-  var numProds = Math.ceil(Math.random() * 4);
-
+  // var numProds = Math.ceil(Math.random() * 4);
+  var numProds = 4;
   //product list
   var products = [];
   var j, priceFactor;
@@ -172,6 +172,7 @@ OregonH.Event.shopEvent = function(eventData) {
     products.push({
       item: eventData.products[j].item,
       qty: eventData.products[j].qty,
+      stat: eventData.products[j].stat,
       price: Math.round(eventData.products[j].price * priceFactor)
     });
   }

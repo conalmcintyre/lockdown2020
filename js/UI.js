@@ -27,6 +27,11 @@ OregonH.UI.refreshStats = function() {
 OregonH.UI.showShop = function(products){
 
   console.log('Items = ' + products.length);
+  console.log(products[0]);
+  console.log(products[1]);
+  console.log(products[2]);
+  console.log(products[3]);
+
   //get shop area
   var shopDiv = document.getElementById('shop');
   shopDiv.classList.remove('hidden');
@@ -48,8 +53,10 @@ OregonH.UI.showShop = function(products){
       else if(target.tagName == 'DIV' && target.className.match(/product/)) {
 
         console.log('buying ' + product.item)
+        console.log('buying ' + product.stat)
 
         var bought = OregonH.UI.buyProduct({
+          stat: target.getAttribute('data-stat'),
           item: target.getAttribute('data-item'),
           qty: target.getAttribute('data-qty'),
           price: target.getAttribute('data-price')
@@ -70,7 +77,7 @@ OregonH.UI.showShop = function(products){
   var product;
   for(var i=0; i < products.length; i++) {
     product = products[i];
-    prodsDiv.innerHTML += '<div class="product" data-qty="' + product.qty + '" data-item="' + product.item + '" data-price="' + product.price + '">' + product.qty + ' ' + product.item + ' - $' + product.price + '</div>';
+    prodsDiv.innerHTML += '<div class="product" data-qty="' + product.qty + '" data-item="' + product.item + '" data-price="' + product.price + '" data-stat="' + product.stat + '">' + product.qty + ' ' + product.item + ' - $' + product.price + '</div>';
   }
 
   //setup click event
