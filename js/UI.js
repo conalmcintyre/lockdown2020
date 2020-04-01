@@ -7,6 +7,11 @@ OregonH.UI.notify = function(message, type){
   document.getElementById('updates-area').innerHTML = '<div class="update-' + type + '">Day '+ Math.ceil(this.caravan.day) + ': ' + message+'</div>' + document.getElementById('updates-area').innerHTML;
 };
 
+//show a notification in the message area
+OregonH.UI.lineBreak = function(){
+  document.getElementById('updates-area').innerHTML = '<br/>' + document.getElementById('updates-area').innerHTML;
+};
+
 //refresh visual caravan stats
 OregonH.UI.refreshStats = function() {
   //modify the dom
@@ -25,12 +30,6 @@ OregonH.UI.refreshStats = function() {
 
 //show shop
 OregonH.UI.showShop = function(products){
-
-  console.log('Items = ' + products.length);
-  console.log(products[0]);
-  console.log(products[1]);
-  console.log(products[2]);
-  console.log(products[3]);
 
   //get shop area
   var shopDiv = document.getElementById('shop');
@@ -51,9 +50,6 @@ OregonH.UI.showShop = function(products){
         OregonH.UI.game.resumeJourney();
       }
       else if(target.tagName == 'DIV' && target.className.match(/product/)) {
-
-        console.log('buying ' + product.item)
-        console.log('buying ' + product.stat)
 
         var bought = OregonH.UI.buyProduct({
           stat: target.getAttribute('data-stat'),
@@ -141,12 +137,15 @@ OregonH.UI.fight = function(){
 
   var damage = Math.ceil(Math.max(0, firepower * 2 * Math.random() - this.caravan.firepower));
 
+  this.lineBreak();
   //check there are survivors
   if(damage < this.caravan.crew) {
     this.caravan.crew -= damage;
     this.caravan.money += gold;
     this.notify('You lost ' + damage + ' health in the fight', 'negative');
     this.notify('Found $' + gold, 'gold');
+    this.notify('**FIGHT**', 'neutral');
+    this.lineBreak();
   }
   else {
     this.caravan.crew = 0;
@@ -176,7 +175,7 @@ OregonH.UI.runaway = function(){
   }
 
   //remove event listener
-  document.getElementById('runaway').removeEventListener('click');
+  //document.getElementById('runaway').removeEventListener('click');
 
   //resume journey
   document.getElementById('attack').classList.add('hidden');

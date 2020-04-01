@@ -89,12 +89,17 @@ OregonH.Game.step = function(timestamp) {
 OregonH.Game.updateGame = function() {
   //day update
   this.caravan.day += OregonH.DAY_PER_STEP;
+  console.log('this.caravan.day = ' + this.caravan.day);
+  if (this.caravan.day == 7){
+    this.ui.notify('This notice should occur every 7 days', 'positive');
+
+  }
 
   //food consumption
   this.caravan.consumeFood();
 
   if(this.caravan.food === 0) {
-    this.ui.notify('You have to death', 'negative');
+    this.ui.notify('You have starved to death', 'negative');
     this.gameActive = false;
     return;
   }
@@ -111,7 +116,7 @@ OregonH.Game.updateGame = function() {
   //check if everyone died
   if(this.caravan.crew <= 0) {
     this.caravan.crew = 0;
-    this.ui.notify('You have died... sorry about that', 'negative');
+    this.ui.notify('You have died... Goodbye friend', 'negative');
     this.gameActive = false;
     return;
   }
