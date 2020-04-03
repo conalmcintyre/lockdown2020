@@ -4,6 +4,7 @@ OregonH.Caravan = {};
 
 OregonH.Caravan.init = function(stats){
   this.day = stats.day;
+  this.dayCounter = stats.dayCounter;
   this.distance = stats.distance;
   this.crew = stats.crew;
   this.food = stats.food;

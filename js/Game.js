@@ -30,6 +30,7 @@ OregonH.Game.init = function(){
   this.caravan = OregonH.Caravan;
   this.caravan.init({
     day: 0,
+    dayCounter: 1,
     distance: 0,
     crew: 30,
     food: 80,
@@ -89,10 +90,18 @@ OregonH.Game.step = function(timestamp) {
 OregonH.Game.updateGame = function() {
   //day update
   this.caravan.day += OregonH.DAY_PER_STEP;
+  this.caravan.dayCounter += OregonH.DAY_PER_STEP*10;
   console.log('this.caravan.day = ' + this.caravan.day);
-  if (this.caravan.day == 7){
-    this.ui.notify('This notice should occur every 7 days', 'positive');
+  console.log('this.caravan.dayCounter = ' + this.caravan.dayCounter);
 
+  // Option to go shopping
+  if (this.caravan.dayCounter%70==0){
+    this.ui.notify('This notice should occur every 7 days', 'positive');
+  }
+
+  // Go collect Dole
+  if(this.caravan.dayCounter%70==4){
+    this.ui.notify('Collect the dole!!', 'positive');
   }
 
   //food consumption
