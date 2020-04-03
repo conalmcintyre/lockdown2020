@@ -95,13 +95,14 @@ OregonH.Game.updateGame = function() {
   console.log('this.caravan.dayCounter = ' + this.caravan.dayCounter);
 
   // Option to go shopping
-  if (this.caravan.dayCounter%70==0){
+  if (this.caravan.dayCounter%70==5){
     this.ui.notify('This notice should occur every 7 days', 'positive');
+    this.eventManager.generateShop();
   }
 
   // Go collect Dole
-  if(this.caravan.dayCounter%70==4){
-    this.ui.notify('Collect the dole!!', 'positive');
+  if(this.caravan.dayCounter%70==41){
+    this.ui.collectDole();
   }
 
   //food consumption

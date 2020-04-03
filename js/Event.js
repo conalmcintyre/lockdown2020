@@ -109,9 +109,79 @@ OregonH.Event.eventTypes = [
   }
 ];
 
+OregonH.Event.shopTypes = [
+  {
+    type: 'SHOP',
+    notification: 'neutral',
+    text: 'You have braved a journey to they shops',
+    products: [
+      {item: 'food', qty: 30, price: 120, stat: 'food'},
+      {item: 'books', qty: 1, price: 40, stat: 'oxen'},
+      {item: 'ice pick', qty: 2, price: 60, stat: 'firepower'},
+      {item: 'bandages', qty: 10, price: 40, stat: 'crew'}
+    ]
+  },
+  {
+    type: 'SHOP',
+    notification: 'neutral',
+    text: 'Risking it all you have decided to go to the shops',
+    products: [
+      {item: 'food', qty: 15, price: 90, stat: 'food'},
+      {item: 'books', qty: 1, price: 30, stat: 'oxen'},
+      {item: 'ice pick', qty: 2, price: 50, stat: 'firepower'},
+      {item: 'bandages', qty: 10, price: 50, stat: 'crew'}
+    ]
+  }
+];
+
+OregonH.Event.generateShop = function(){
+  //pick random one
+  var eventIndex = Math.floor(Math.random() * this.shopTypes.length);
+  var eventData = this.shopTypes[eventIndex];
+
+  //start shop eventTypes//pause game
+  this.game.pauseJourney();
+
+  //notify user
+  this.ui.notify(eventData.text, eventData.notification);
+
+  //number of products for sale
+  // var numProds = Math.ceil(Math.random() * 4);
+  var numProds = 4;
+  //product list
+  var products = [];
+  var j, priceFactor;
+
+  for(var i = 0; i < numProds; i++) {
+    //random product
+    // j = Math.floor(Math.random() * eventData.products.length);
+    j = i;
+
+    // FIXME: Double check this equation - update to make more practical in game
+    //multiply price by random factor +-30%
+    priceFactor = 0.7 + 0.6 * Math.random();
+
+    products.push({
+      item: eventData.products[j].item,
+      qty: eventData.products[j].qty,
+      stat: eventData.products[j].stat,
+      price: Math.round(eventData.products[j].price * priceFactor)
+    });
+  }
+
+  console.log('Products in Offer Shop');
+  console.log(products[0]);
+  console.log(products[1]);
+  console.log(products[2]);
+  console.log(products[3]);
+
+  //prepare event
+  this.ui.offerShop(products);
+};
+
 OregonH.Event.generateEvent = function(){
   //pick random one
-    var eventIndex = Math.floor(Math.random() * this.eventTypes.length);
+  var eventIndex = Math.floor(Math.random() * this.eventTypes.length);
   var eventData = this.eventTypes[eventIndex];
 
   //events that consist in updating a stat

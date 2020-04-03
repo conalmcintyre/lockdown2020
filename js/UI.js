@@ -28,9 +28,44 @@ OregonH.UI.refreshStats = function() {
   document.getElementById('caravan').style.left = (380 * this.caravan.distance/OregonH.FINAL_DISTANCE) + 'px';
 };
 
+// offer shop
+OregonH.UI.offerShop = function(products){
+  var attackDiv = document.getElementById('attack');
+  attackDiv.classList.remove('hidden');
+
+  this.offered = true;
+
+  //keep properties
+  this.products = products;
+
+console.log('Productions in OfferShop')
+console.log(products[0]);
+console.log(products[1]);
+console.log(products[2]);
+console.log(products[3]);
+
+  document.getElementById('fight').addEventListener('click', this.showShop.bind(this));
+  document.getElementById('runaway').addEventListener('click', this.stayHome.bind(this));
+};
+
+OregonH.UI.stayHome = function(){
+  console.log('In Stay Home');
+  document.getElementById('attack').classList.add('hidden');
+  this.game.resumeJourney();
+}
+
 //show shop
 OregonH.UI.showShop = function(products){
+  console.log('In Show Shop');
 
+  // Check has shop been offered
+  if (this.offered){
+    products = this.products;
+  }
+  this.offered = false;
+
+  document.getElementById('attack').classList.add('hidden');
+  this.game.pauseJourney();
   //get shop area
   var shopDiv = document.getElementById('shop');
   shopDiv.classList.remove('hidden');
@@ -182,3 +217,9 @@ OregonH.UI.runaway = function(){
   this.game.resumeJourney();
 
 };
+
+OregonH.UI.collectDole = function(){
+  this.caravan.money += 200;
+  this.notify('You have collected €200 social welfare payment', 'positive');
+  console.log('Collected Dole');
+}
