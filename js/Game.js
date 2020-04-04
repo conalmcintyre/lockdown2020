@@ -95,7 +95,7 @@ OregonH.Game.updateGame = function() {
   console.log('this.caravan.dayCounter = ' + this.caravan.dayCounter);
 
   // Option to go shopping
-  if (this.caravan.dayCounter%70==5){
+  if (this.caravan.dayCounter%70==01){
     this.ui.notify('This notice should occur every 7 days', 'positive');
     this.eventManager.generateShop();
   }

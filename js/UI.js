@@ -30,7 +30,7 @@ OregonH.UI.refreshStats = function() {
 
 // offer shop
 OregonH.UI.offerShop = function(products){
-  var attackDiv = document.getElementById('attack');
+  var attackDiv = document.getElementById('offer-shop');
   attackDiv.classList.remove('hidden');
 
   this.offered = true;
@@ -44,8 +44,8 @@ console.log(products[1]);
 console.log(products[2]);
 console.log(products[3]);
 
-  document.getElementById('fight').addEventListener('click', this.showShop.bind(this));
-  document.getElementById('runaway').addEventListener('click', this.stayHome.bind(this));
+  document.getElementById('offer-buy').addEventListener('click', this.showShop.bind(this));
+  document.getElementById('offer-home').addEventListener('click', this.stayHome.bind(this));
 };
 
 OregonH.UI.stayHome = function(){
@@ -64,7 +64,7 @@ OregonH.UI.showShop = function(products){
   }
   this.offered = false;
 
-  document.getElementById('attack').classList.add('hidden');
+  document.getElementById('offer-shop').classList.add('hidden');
   this.game.pauseJourney();
   //get shop area
   var shopDiv = document.getElementById('shop');

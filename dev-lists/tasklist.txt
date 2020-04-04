@@ -15,6 +15,8 @@ Write an introduction. Explaining the game scenario.
 Internet is down across the country and tv has stopped broadcasting punging society back to the state it was in during the 90s.
 A time when people owned things and had to pay for cultural artifacts instead of paying a monthly fee to an unprofitable wings of hugely profitable technology companies for access to a library larger than anyone could have any use for.
 
+Have 3 weapons of different strengths - You can only have one at a time and it can be lost in battles
+
 Update images
 
 update file names to relevant names i.e. Caravan = house - non-essential

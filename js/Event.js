@@ -59,28 +59,28 @@ OregonH.Event.eventTypes = [
     value: 1,
     text: 'You find a copy of Citizen Kane in the attic. New Media: '
   },
-  {
-    type: 'SHOP',
-    notification: 'neutral',
-    text: 'You Brave a jouney to the shops',
-    products: [
-      {item: 'food', qty: 20, price: 10, stat: 'food'},
-      {item: 'dvd', qty: 1, price: 20, stat: 'oxen'},
-      {item: 'shovel', qty: 2, price: 10, stat: 'firepower'},
-      {item: 'medical supplies', qty: 5, price: 80, stat: 'crew'}
-    ]
-  },
-  {
-    type: 'SHOP',
-    notification: 'neutral',
-    text: 'You have been visited by a travelling salesman',
-    products: [
-      {item: 'food', qty: 30, price: 10, stat: 'food'},
-      {item: 'books', qty: 1, price: 20, stat: 'oxen'},
-      {item: 'ice pick', qty: 2, price: 10, stat: 'firepower'},
-      {item: 'bandages', qty: 10, price: 10, stat: 'crew'}
-    ]
-  },
+  // {
+  //   type: 'SHOP',
+  //   notification: 'neutral',
+  //   text: 'You Brave a jouney to the shops',
+  //   products: [
+  //     {item: 'food', qty: 20, price: 10, stat: 'food'},
+  //     {item: 'dvd', qty: 1, price: 20, stat: 'oxen'},
+  //     {item: 'shovel', qty: 2, price: 10, stat: 'firepower'},
+  //     {item: 'medical supplies', qty: 5, price: 80, stat: 'crew'}
+  //   ]
+  // },
+  // {
+  //   type: 'SHOP',
+  //   notification: 'neutral',
+  //   text: 'You have been visited by a travelling salesman',
+  //   products: [
+  //     {item: 'food', qty: 30, price: 10, stat: 'food'},
+  //     {item: 'books', qty: 1, price: 20, stat: 'oxen'},
+  //     {item: 'ice pick', qty: 2, price: 10, stat: 'firepower'},
+  //     {item: 'bandages', qty: 10, price: 10, stat: 'crew'}
+  //   ]
+  // },
   {
     type: 'SHOP',
     notification: 'neutral',
