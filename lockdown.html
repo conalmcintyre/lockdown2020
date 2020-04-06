@@ -27,26 +27,35 @@
       </div>
 
 <!-- SHOULD UPDATES AREA BE MOVED BELOW STATS AND IMAGES????? -->
-
-      <div id="introduction">
-        <div id="attack-description">Dear Gareth,<br/>Here is where the introduction will go - it should probably be shorter than this.<br/>
-        Right at the top of the game - first thing that happens.<br/>
-        For an introduction I would like to breifly explain the world in which the game takes place. It is more for the sake of explaining away some of the game mechanics.<br/>
-        <br/>
-        So! All you need to do is survive the lockdown.<br/>
-        To survive you need food.<br/>
-        You need entertainment - and the internet's broke so you have to buy records and books like how old people used to.<br/>
-        You will get attacked from time to time - either break ins or when on your way to the shop, So you'll need something to defend yourself with.<br/>
-        You'll be able to buy medical supplies to heal yourself.<br/>
-        You will recieve €200 social welfare payment, weekly, as you have lost your job.<br/>
-
-        Good luck.<br/>
-        <br/>
+      <div class="updates-area" id="updates-area"></div>
+      <div id="shop" class="hidden">
+        <div id="prods">
         </div>
-        <a id="fight" href="lockdown.html">Play</button>
-        <a id="runaway" href="http://www.arethebritsatitagain.com">Leave</button>
+        <button>Return Home</button>
+      </div>
+      <div id="attack" class="hidden">
+        <div id="attack-description"></div>
+        <button id="fight">Fight</button>
+        <button id="runaway">Run away</button>
+      </div>
+      <div id="offer-shop" class="hidden">
+        <div id="attack-description"></div>
+        <p>Do you want to go shopping</p>
+        <button id="offer-buy">Let's Go</button>
+        <button id="offer-home">Stay Home</button>
+      </div>
+      <div id="progress-area" class="hidden">
+        <img id="caravan" src="images/caravan.png" />
+        <img id="trees" src="images/trees.png" />
       </div>
     </div>
 
+<!-- SHOULD EVENT BE MOVED BELOW STATS AND IMAGES????? -->
+<!-- EVENTS ALTER THE LAYOUT AS THEY APPERAR AND DISAPPEAR -->
+    <div id="event"></div>
+    <script src="js/Event.js"></script>
+    <script src="js/Caravan.js"></script>
+    <script src="js/UI.js"></script>
+    <script src="js/Game.js"></script>
   </body>
 </html>

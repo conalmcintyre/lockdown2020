@@ -87,9 +87,9 @@ td,th{padding:0}
 
 #updates-area {
   float: left;
-  width: 350px;
+  width: 500px;
   margin: 10px;
-  height: 150px;
+  height: 300px;
   padding: 10px;
   font-size: 12px;
   overflow-y: scroll;
@@ -137,6 +137,15 @@ td,th{padding:0}
   padding: 10px;
   height: 60px;
   width: 150px;
+}
+
+#introduction {
+  float: left;
+  /* background-color: white; */
+  margin: 10px;
+  padding: 10px;
+  height: 600px;
+  width: 800px;
 }
 
 #offer-shop {
